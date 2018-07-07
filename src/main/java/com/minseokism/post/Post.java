@@ -35,10 +35,12 @@ public class Post {
     public Post(Long id){
         this.id = id;
     }
+
     public Post(String title, PostStatus status){
         this.title = title;
         this.status = status;
     }
+
     public Post(Long id, String title, String content, String code, PostStatus status){
         this.id = id;
         this.title = title;

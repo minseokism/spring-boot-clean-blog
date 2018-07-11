@@ -39,10 +39,10 @@ public class PostControllerTest {
                 .andReturn();
 
         Post post = (Post) mvcResult.getModelAndView().getModel().get("post");
-        assertThat(post.getTitle().equals("자바"));
-        assertThat(post.getContent().equals("컨텐츠"));
-        assertThat(post.getCode().equals("마크다운"));
-        assertThat(post.getStatus().equals(PostStatus.Y));
+        assertThat(post.getTitle()).isEqualTo("자바");
+        assertThat(post.getContent()).isEqualTo("컨텐츠");
+        assertThat(post.getCode()).isEqualTo("마크다운");
+        assertThat(post.getStatus()).isEqualTo(PostStatus.Y);
     }
 
     @Test
@@ -63,9 +63,9 @@ public class PostControllerTest {
                 .andReturn();
 
         PostDto postDto = (PostDto) mvcResult.getModelAndView().getModel().get("editPost");
-        assertThat(postDto.getTitle().equals("자바"));
-        assertThat(postDto.getContent().equals("컨텐츠"));
-        assertThat(postDto.getCode().equals("마크다운"));
+        assertThat(postDto.getTitle()).isEqualTo("자바");
+        assertThat(postDto.getContent()).isEqualTo("컨텐츠");
+        assertThat(postDto.getCode()).isEqualTo("마크다운");
     }
 
     @Test

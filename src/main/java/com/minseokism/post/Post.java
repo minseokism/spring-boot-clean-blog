@@ -1,10 +1,13 @@
 package com.minseokism.post;
 
+import com.minseokism.comment.Comment;
+import com.minseokism.category.Category;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -29,19 +32,26 @@ public class Post {
 
     private LocalDateTime regDate;
 
-    Post(){
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CATEGORY_ID")
+    private Category category;
+
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+    private List<Comment> comments;
+
+    Post() {
     }
 
-    public Post(Long id){
+    public Post(Long id) {
         this.id = id;
     }
 
-    public Post(String title, PostStatus status){
+    public Post(String title, PostStatus status) {
         this.title = title;
         this.status = status;
     }
 
-    public Post(Long id, String title, String content, String code, PostStatus status){
+    public Post(Long id, String title, String content, String code, PostStatus status) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -49,7 +59,7 @@ public class Post {
         this.status = status;
     }
 
-    public Post(String title, String content, String code, PostStatus status){
+    public Post(String title, String content, String code, PostStatus status) {
         this.title = title;
         this.content = content;
         this.code = code;

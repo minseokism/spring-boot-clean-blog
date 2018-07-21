@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Transactional
 @RequiredArgsConstructor
 public class PostService {
+
     private final PostRepository postRepository;
 
     public Post createPost(Post post) {

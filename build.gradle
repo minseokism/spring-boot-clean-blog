@@ -29,6 +29,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('io.github.jpenren:thymeleaf-spring-data-dialect:3.3.1')
+    compile('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.3.0')
     compile('org.thymeleaf.extras:thymeleaf-extras-java8time')
 
     runtime('com.h2database:h2')

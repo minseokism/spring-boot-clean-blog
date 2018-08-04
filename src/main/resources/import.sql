@@ -1,3 +1,4 @@
+
 insert into category(ID, NAME, REG_DATE) values(1, 'spring', CURRENT_TIMESTAMP());
 insert into category(ID, NAME, REG_DATE) values(2, 'java', CURRENT_TIMESTAMP());
 
